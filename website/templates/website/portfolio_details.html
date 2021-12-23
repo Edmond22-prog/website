@@ -1,0 +1,66 @@
+{% extends "./base.html" %}
+
+{% block content %}
+
+  <main id="main">
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src={{ item_portfolio.image_projet_1.url }} alt="">
+                </div>
+
+                {% if item_portfolio.image_projet_2.url != None %}
+                    <div class="swiper-slide">
+                        <img src={{ item_portfolio.image_projet_2.url }} alt="">
+                    </div>
+                {% endif %}
+
+                {% if item_portfolio.image_projet_3.url != None %}
+                    <div class="swiper-slide">
+                        <img src={{ item_portfolio.image_projet_3.url }} alt="">
+                    </div>
+                {% endif %}
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: {{ item_portfolio.categorie }}</li>
+                {% if item_portfolio.client %}
+                    <li><strong>Client</strong>: {{ item_portfolio.client }}</li>
+                {% else %}
+                    <li><strong>Client</strong>: Personal</li>
+                {% endif %}
+                <li><strong>Project URL</strong>: <a href={{ item_portfolio.lien_projet }}>Click here !</a></li>
+              </ul>
+            </div>
+            <div class="portfolio-description">
+              <h2>Description</h2>
+              <p>
+                {{ item_portfolio.detail }}
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+{% endblock content %}
