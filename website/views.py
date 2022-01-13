@@ -25,4 +25,4 @@ def index(request):
 
 class PortfolioDetailView(DetailView):
     model = Item_portfolio
-    template_name = 'portfolio_details.html'
+    template_name = 'website/portfolio_details.html'
