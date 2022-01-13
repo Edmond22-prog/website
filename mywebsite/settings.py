@@ -133,3 +133,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 X_FRAME_OPTIONS = 'ALLOWALL'
+
+# PARAMETRAGE DU MAIL POUR LE LOCALHOST ET GMAIL
+
+EMAIL_HOST = 'localhost'    # 'smtp.gmail.com'
+EMAIL_PORT = 1025     # 587 et change au fil du temps
+EMAIL_HOST_USER = ''    # 'edghimakoll@gmail.com'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False 
+
+# Commande pour tracer le mail envoye par le localhost :
+    # python3 -m smtpd -n -c DebuggingServer localhost:1025

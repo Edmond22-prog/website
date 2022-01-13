@@ -5,5 +5,5 @@ from .views import PortfolioDetailView
 urlpatterns = [
     path('', views.index, name="home"),
     path('portfolio/<int:pk>/detail', PortfolioDetailView.as_view(), name="portfolio-detail"),
-
+    path('', views.sending, name="sending-mail"),
 ]

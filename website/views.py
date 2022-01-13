@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import DetailView
+from django.core.mail import send_mail
 from website.models import Communautaire, Diplome, Experience, Item_portfolio, Profil, Skill
 
 
@@ -21,6 +22,22 @@ def index(request):
         'liste_communautaire': liste_communautaire,
         'liste_item_portfolio': liste_item_portfolio,
     })
+
+
+def sending(request):
+    if (request.method == "POST"):
+        name = request.POST['name']
+        email = request.POST['email']
+        subject = request.POST['subject']
+        message = request.POST['message']
+        # Envoi du mail
+        send_mail (
+            subject,
+            message,
+            email,
+            ['edghimakoll@gmail.com'],
+        )
+        return render(request, 'website/index.html', {'name': name})
 
 
 class PortfolioDetailView(DetailView):
