@@ -1,0 +1,30 @@
+{% extends "./base.html" %}
+
+{% block title %}
+    Sent mail
+{% endblock title %}
+
+{% block content %}
+
+    {% if name %}
+
+        <center>
+            <br><br>
+            <h3><strong>Your message has been sent. Thank you {{ name }}!</strong></h3>
+            <br>
+            <p><a href={% url 'home' %}>Back home</a></p>
+        </center>
+
+    {% else %}
+
+        <center>
+            <br><br>
+            <h3><strong>You are not allowed to be on this page !</strong></h3>
+            <br>
+            <p><a href={% url 'home' %}>Back home</a></p>
+        </center>
+
+    {% endif %}
+    
+
+{% endblock content %}  

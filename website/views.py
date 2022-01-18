@@ -37,7 +37,9 @@ def sending(request):
             email,
             ['edghimakoll@gmail.com'],
         )
-        return render(request, 'website/index.html', {'name': name})
+        return render(request, 'website/sending_mail.html', {'name': name})
+    else:
+        return render(request, 'website/sending_mail.html', {})
 
 
 class PortfolioDetailView(DetailView):
