@@ -144,3 +144,8 @@ EMAIL_USE_TLS = False
 
 # Commande pour tracer le mail envoye par le localhost :
     # python3 -m smtpd -n -c DebuggingServer localhost:1025
+
+
+
+import django_heroku
+django_heroku.settings(locals())
