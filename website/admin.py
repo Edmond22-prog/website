@@ -1,5 +1,5 @@
 from django.contrib import admin
-from website.models import Community, Education, Experience, ItemPortfolio, Profile, Skill
+from website.models import Community, Education, Experience, ItemPortfolio, Profile
 
 
 class EducationAdmin(admin.ModelAdmin):
@@ -17,7 +17,6 @@ class CommunityAdmin(admin.ModelAdmin):
     list_filter = ('city',)
 
 
-admin.site.register(Skill)
 admin.site.register(Education, EducationAdmin)
 admin.site.register(Experience, ExperienceAdmin)
 admin.site.register(Profile)

@@ -1,19 +1,17 @@
 from django.shortcuts import render
 from django.views.generic import DetailView
 from django.core.mail import send_mail
-from website.models import Community, Education, Experience, ItemPortfolio, Profile, Skill
+from website.models import Community, Education, Experience, ItemPortfolio, Profile
 
 
 def index(request):
     profile = Profile.objects.first()
-    skills = Skill.objects.all()
     experiences = Experience.objects.all().order_by('-id')
     educations = Education.objects.all().order_by('-start_year')
     communities = Community.objects.all().order_by('-id')
     items_portfolio = ItemPortfolio.objects.all()
     return render(request, 'website/index.html', {
         'profile': profile,
-        'skills': skills,
         'experiences': experiences,
         'educations': educations,
         'communities': communities,

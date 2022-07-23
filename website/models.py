@@ -20,14 +20,6 @@ class Profile(models.Model):
         return self.surname + " " + self.name
 
 
-class Skill(models.Model):
-    title = models.CharField(max_length=255, blank=True, null=False)
-    skill_svg = models.ImageField(blank=True, null=True, upload_to="images/skills/")
-
-    def __str__(self):
-        return self.title
-
-
 class Education(models.Model):
     diploma = models.CharField(max_length=255, blank=True, null=True)
     start_year = models.IntegerField(null=False, blank=True)
