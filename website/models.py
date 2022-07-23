@@ -59,7 +59,7 @@ class Community(models.Model):
 
 
 class ItemPortfolio(models.Model):
-    category = models.CharField(max_length=255, choices=[("Application", "Application"), ("Web", "Web")], null=False, default="Application")
+    category = models.CharField(max_length=255, choices=[("Mobile", "Mobile"), ("Web", "Web")], null=False, default="Mobile")
     client = models.CharField(max_length=255, blank=True, null=True)
     project_link = models.CharField(max_length=255, blank=True, null=True)
     project_pic_1 = models.ImageField(blank=True, null=False, upload_to="images/portfolio/")
