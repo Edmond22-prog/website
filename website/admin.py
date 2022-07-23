@@ -1,26 +1,25 @@
 from django.contrib import admin
-
-from website.models import Communautaire, Diplome, Experience, Item_portfolio, Profil, Skill
-
-class SkillAdmin(admin.ModelAdmin):
-    list_display = ('nom', 'capacite', 'categorie')
-    list_filter = ('categorie',)
-    search_fields = ('nom',)
+from website.models import Community, Education, Experience, ItemPortfolio, Profile, Skill
 
 
-class DiplomeAdmin(admin.ModelAdmin):
-    list_display = ('intitule', 'debut_annee', 'fin_annee')
-    list_filter = ('ville',)
+class EducationAdmin(admin.ModelAdmin):
+    list_display = ('diploma', 'start_year', 'end_year')
+    list_filter = ('city',)
 
 
 class ExperienceAdmin(admin.ModelAdmin):
-    list_display = ('titre', 'periode_commencement', 'periode_fin')
-    list_filter = ('ville',)
+    list_display = ('role', 'experience_start', 'experience_end')
+    list_filter = ('city',)
 
 
-admin.site.register(Skill, SkillAdmin)
-admin.site.register(Diplome, DiplomeAdmin)
+class CommunityAdmin(admin.ModelAdmin):
+    list_display = ('community_role', 'community_start', 'community_end')
+    list_filter = ('city',)
+
+
+admin.site.register(Skill)
+admin.site.register(Education, EducationAdmin)
 admin.site.register(Experience, ExperienceAdmin)
-admin.site.register(Profil)
-admin.site.register(Communautaire)
-admin.site.register(Item_portfolio)
+admin.site.register(Profile)
+admin.site.register(Community, CommunityAdmin)
+admin.site.register(ItemPortfolio)

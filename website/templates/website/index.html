@@ -22,15 +22,14 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center" style="background: url({{ profil.photo_arriere_plan.url }})">
+  <section id="hero" class="d-flex flex-column justify-content-center" style="background-size: cover ; background-image: url({{ profile.background_pic.url }}" >
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
-      <h1>{{ profil.prenom }} {{ profil.nom }}</h1>
+      <h1>{{ profile.surname }} {{ profile.name }}</h1>
       <p>I'm <span class="typed" data-typed-items="Leader, Developer, Freelancer, Otaku"></span></p>
       <div class="social-links">
-        <a href={{ profil.lien_twitter }} class="twitter" target=_blank><i class="bx bxl-twitter"></i></a>
-        <a href={{ profil.lien_instagram }} class="instagram" target=_blank><i class="bx bxl-instagram"></i></a>
-        <a href={{ profil.lien_linkedin }} class="linkedin" target=_blank><i class="bx bxl-linkedin"></i></a>
-        <a href={{ profil.lien_github }} class="github" target=_blank><i class="bx bxl-github"></i></a>
+        <a href="{{ profile.twitter_link }}" class="twitter" target=_blank><i class="bx bxl-twitter"></i></a>
+        <a href="{{ profile.linkedin_link }}" class="linkedin" target=_blank><i class="bx bxl-linkedin"></i></a>
+        <a href="{{ profile.github_link }}" class="github" target=_blank><i class="bx bxl-github"></i></a>
       </div>
     </div>
   </section><!-- End Hero -->
@@ -47,31 +46,31 @@
 
         <div class="row">
           <div class="col-lg-4">
-            <img src={{ profil.photo_profil.url }} class="img-fluid" alt="">
+            <img src="{{ profile.profile_pic.url }}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content">
             <h3>Python Developer &amp; Junior Flutter Developer.</h3>
             <p class="fst-italic">
-              This is some informations about me...
+              This is some information about me...
             </p>
             <div class="row">
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>{{ profil.date_anniversaire }}</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+237 {{ profil.numero_telephone }}</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>{{ profil.localisation }}</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>{{ profile.birthday }}</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+237 {{ profile.phone }}</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>{{ profile.localisation }}</span></li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>{{ profil.niveau_etude }}</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>{{ profil.email }}</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>{{ profile.grade }}</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>{{ profile.email }}</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
                 </ul>
               </div>
             </div>
             <p>
-              {{ profil.bio }}
+              {{ profile.bio }}
             </p>
           </div>
         </div>
@@ -89,35 +88,35 @@
 
         <div class="row skills-content">
 
-          <div class="col-lg-6">
-            <h4>Technologies</h4>
-            <br>
-            {% for skill in liste_skill_techno %}
-
-              <div class="progress">
-                <span class="skill">{{ skill.nom }} <i class="val">{{ skill.capacite }}</i></span>
-                <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ skill.capacite }}" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            
-            {% endfor %}
-          </div>
-
-          <div class="col-lg-6">
-            <h4>Languages</h4>
-            <br>
-            {% for skill in liste_skill_langage %}
-
-              <div class="progress">
-                <span class="skill">{{ skill.nom }} <i class="val">{{ skill.capacite }}</i></span>
-                <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ skill.capacite }}" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            
-            {% endfor %}
-          </div>
+{#          <div class="col-lg-6">#}
+{#            <h4>Technologies</h4>#}
+{#            <br>#}
+{#            {% for skill in liste_skill_techno %}#}
+{##}
+{#              <div class="progress">#}
+{#                <span class="skill">{{ skill.nom }} <i class="val">{{ skill.capacite }}</i></span>#}
+{#                <div class="progress-bar-wrap">#}
+{#                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ skill.capacite }}" aria-valuemin="0" aria-valuemax="100"></div>#}
+{#                </div>#}
+{#              </div>#}
+{#            #}
+{#            {% endfor %}#}
+{#          </div>#}
+{##}
+{#          <div class="col-lg-6">#}
+{#            <h4>Languages</h4>#}
+{#            <br>#}
+{#            {% for skill in liste_skill_langage %}#}
+{##}
+{#              <div class="progress">#}
+{#                <span class="skill">{{ skill.nom }} <i class="val">{{ skill.capacite }}</i></span>#}
+{#                <div class="progress-bar-wrap">#}
+{#                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ skill.capacite }}" aria-valuemin="0" aria-valuemax="100"></div>#}
+{#                </div>#}
+{#              </div>#}
+{#            #}
+{#            {% endfor %}#}
+{#          </div>#}
 
         </div>
 
@@ -133,28 +132,28 @@
         </div>
 
         <div class="row">
-          {% if liste_experience %}
+          {% if experiences %}
           
             <div class="col-lg-6" data-aos="fade-up">
               <h3 class="resume-title">Professional Experience</h3>
-              {% for experience in liste_experience %}
+              {% for experience in experiences %}
                 
                 <div class="resume-item">
-                  <h4>{{ experience.titre }}</h4>
-                  <h5>{{ experience.periode_commencement }} - {{ experience.periode_fin }}</h5>
-                  <p><em><strong>{{ experience.nom_compagnie}}</strong> | {{ experience.ville }}, {{ experience.pays }}</em></p>
+                  <h4>{{ experience.role }}</h4>
+                  <h5>{{ experience.experience_start }} - {{ experience.experience_end }}</h5>
+                  <p><em><strong>{{ experience.company }}</strong> | {{ experience.city }}, {{ experience.country }}</em></p>
                   <p>{{ experience.description }}</p>
                 </div>
                 
               {% endfor %}
               
               <h3 class="resume-title">Education</h3>
-              {% for diplome in liste_diplome %}
+              {% for diplome in educations %}
               
                 <div class="resume-item">
-                  <h4>{{ diplome.intitule }}</h4>
-                  <h5>{{ diplome.debut_annee }} - {{ diplome.fin_annee }}</h5>
-                  <p><em><strong>{{ diplome.nom_etablisement }}</strong><br>{{ diplome.ville}}, {{ diplome.pays }}</em></p>
+                  <h4>{{ diplome.diploma }}</h4>
+                  <h5>{{ diplome.start_year }} - {{ diplome.end_year }}</h5>
+                  <p><em><strong>{{ diplome.school }}</strong><br>{{ diplome.city }}, {{ diplome.country }}</em></p>
                 </div>  
               
               {% endfor %}
@@ -162,39 +161,37 @@
             </div>
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
               <h3 class="resume-title">Leadership &amp; Community Activities</h3>
-              {% for comm in liste_communautaire %}
+              {% for comm in communities %}
 
                 <div class="resume-item">
-                  <h4>{{ comm.role }}</h4>
-                  <h5>{{ comm.period_commencement }} - {{ comm.periode_fin }}</h5>
-                  <p><em>{{ comm.nom_compagnie }}, {{ comm.ville}}, {{ comm.pays }}</em></p>
+                  <h4>{{ comm.community_role }}</h4>
+                  <h5>{{ comm.community_start }} - {{ comm.community_end }}</h5>
+                  <p><em>{{ comm.structure }}, {{ comm.city }}, {{ comm.country }}</em></p>
                   <p>{{ comm.description }}</p>
                 </div>
 
               {% endfor %}
             </div>
           {% else %}
-
-            <h3 class="resume-title">Education</h3>
-              {% for diplome in liste_diplome %}
-              
-                <div class="resume-item">
-                  <h4>{{ diplome.intitule }}</h4>
-                  <h5>{{ diplome.debut_annee }} - {{ diplome.fin_annee }}</h5>
-                  <p><em><strong>{{ diplome.nom_etablisement }}</strong><br>{{ diplome.ville}}, {{ diplome.pays }}</em></p>
-                </div>  
-              
-              {% endfor %}
+            <div>
+                <h3 class="resume-title">Education</h3>
+                {% for diplome in educations %}
+                    <div class="resume-item">
+                      <h4>{{ diplome.diploma }}</h4>
+                      <h5>{{ diplome.start_year }} - {{ diplome.end_year }}</h5>
+                      <p><em><strong>{{ diplome.school }}</strong><br>{{ diplome.city }}, {{ diplome.country }}</em></p>
+                    </div>
+                {% endfor %}
 
             </div>
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
               <h3 class="resume-title">Leadership &amp; Community Activities</h3>
-              {% for comm in liste_communautaire %}
+              {% for comm in communities %}
 
                 <div class="resume-item">
-                  <h4>{{ comm.role }}</h4>
-                  <h5>{{ comm.period_commencement }} - {{ comm.periode_fin }}</h5>
-                  <p><em>{{ comm.nom_compagnie }}, {{ comm.ville}}, {{ comm.pays }}</em></p>
+                  <h4>{{ comm.community_role }}</h4>
+                  <h5>{{ comm.community_start }} - {{ comm.community_end }}</h5>
+                  <p><em>{{ comm.structure }}, {{ comm.city }}, {{ comm.country }}</em></p>
                   <p>{{ comm.description }}</p>
                 </div>
 
@@ -207,8 +204,8 @@
       </div>
     </section><!-- End Resume Section -->
 
-    {% if liste_item_portfolio %}
-      <!-- ======= Portfolio Section ======= -->
+    {% if items_portfolio %}
+      <!-- ======= Portfolio Section ======= -- >
       <section id="portfolio" class="portfolio section-bg">
         <div class="container" data-aos="fade-up">
 
@@ -227,17 +224,17 @@
           </div>
 
           <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-            {% for item in liste_item_portfolio %}
+            {% for item in items_portfolio %}
 
-              {% if item.categorie == "Application" %}
+              {% if item.category == "Application" %}
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                   <div class="portfolio-wrap">
-                    <img src={{ item.image_projet_1.url }} class="img-fluid" alt="">
+                    <img src="{{ item.project_pic_1.url }}" class="img-fluid" alt="">
                     <div class="portfolio-info">
                       <h4>App</h4>
                       <div class="portfolio-links">
-                        <a href={{ item.image_projet_1.url }} data-gallery="portfolioGallery" class="portfolio-lightbox" title="App"><i class="bx bx-plus"></i></a>
+                        <a href="{{ item.project_pic_1.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App"><i class="bx bx-plus"></i></a>
                         <a href="{% url 'portfolio-detail' item.pk %}" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                       </div>
                     </div>
@@ -248,11 +245,11 @@
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                   <div class="portfolio-wrap">
-                    <img src={{ item.image_projet_1.url }} class="img-fluid" alt="">
+                    <img src="{{ item.project_pic_1.url }}" class="img-fluid" alt="">
                     <div class="portfolio-info">
                       <h4>Web</h4>
                       <div class="portfolio-links">
-                        <a href={{ item.image_projet_1.url }} data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web"><i class="bx bx-plus"></i></a>
+                        <a href="{{ item.project_pic_1.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web"><i class="bx bx-plus"></i></a>
                         <a href={% url 'portfolio-detail' item.pk %} class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                       </div>
                     </div>
@@ -265,7 +262,7 @@
           </div>
 
         </div>
-      </section><!-- End Portfolio Section -->
+      </section> <!-- End Portfolio Section -->
 
     {% endif %}
 
@@ -284,19 +281,19 @@
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
-                <p>{{ profil.localisation }}</p>
+                <p>{{ profile.localisation }}</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>{{ profil.email }}</p>
+                <p>{{ profile.email }}</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>+237 {{ profil.numero_telephone }}</p>
+                <p>+237 {{ profile.phone }}</p>
               </div>
 
             </div>
@@ -305,7 +302,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action={% url 'sending-mail' %} method="post">
+            <form action="{% url 'sending-mail' %}" method="post">
               {% csrf_token %}
               <div class="row">
                 <div class="col-md-6 form-group">
@@ -339,10 +336,9 @@
     <div class="container">
       <h3>You can call me Edghi</h3>
       <div class="social-links">
-        <a href={{ profil.lien_twitter }} class="twitter" target=_blank><i class="bx bxl-twitter"></i></a>
-        <a href={{ profil.lien_instagram }} class="instagram" target=_blank><i class="bx bxl-instagram"></i></a>
-        <a href={{ profil.lien_linkedin }} class="linkedin" target=_blank><i class="bx bxl-linkedin"></i></a>
-        <a href={{ profil.lien_github }} class="github" target=_blank><i class="bx bxl-github"></i></a>
+        <a href="{{ profile.twitter_link }}" class="twitter" target=_blank><i class="bx bxl-twitter"></i></a>
+        <a href="{{ profile.linkedin_link }}" class="linkedin" target=_blank><i class="bx bxl-linkedin"></i></a>
+        <a href="{{ profile.github_link }}" class="github" target=_blank><i class="bx bxl-github"></i></a>
       </div> 
     </div>
   </footer><!-- End Footer -->

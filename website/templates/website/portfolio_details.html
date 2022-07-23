@@ -15,18 +15,18 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src={{ item_portfolio.image_projet_1.url }} alt="">
+                  <img src={{ item_portfolio.project_pic_1.url }} alt="">
                 </div>
 
-                {% if item_portfolio.image_projet_2.url != None %}
+                {% if item_portfolio.project_pic_2.url != None %}
                     <div class="swiper-slide">
-                        <img src={{ item_portfolio.image_projet_2.url }} alt="">
+                        <img src={{ item_portfolio.project_pic_2.url }} alt="">
                     </div>
                 {% endif %}
 
-                {% if item_portfolio.image_projet_3.url != None %}
+                {% if item_portfolio.project_pic_3.url != None %}
                     <div class="swiper-slide">
-                        <img src={{ item_portfolio.image_projet_3.url }} alt="">
+                        <img src={{ item_portfolio.project_pic_3.url }} alt="">
                     </div>
                 {% endif %}
 
@@ -39,13 +39,13 @@
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Category</strong>: {{ item_portfolio.categorie }}</li>
+                <li><strong>Category</strong>: {{ item_portfolio.category }}</li>
                 {% if item_portfolio.client %}
                     <li><strong>Client</strong>: {{ item_portfolio.client }}</li>
                 {% else %}
                     <li><strong>Client</strong>: Personal</li>
                 {% endif %}
-                <li><strong>Project URL</strong>: <a href={{ item_portfolio.lien_projet }}>Click here !</a></li>
+                <li><strong>Project URL</strong>: <a target="_blank" href="{{ item_portfolio.project_link }}">Click here !</a></li>
               </ul>
             </div>
             <div class="portfolio-description">

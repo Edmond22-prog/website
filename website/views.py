@@ -1,37 +1,34 @@
 from django.shortcuts import render
 from django.views.generic import DetailView
 from django.core.mail import send_mail
-from website.models import Communautaire, Diplome, Experience, Item_portfolio, Profil, Skill
-
+from website.models import Community, Education, Experience, ItemPortfolio, Profile, Skill
 
 
 def index(request):
-    profil = Profil.objects.first()
-    liste_skill_langage = Skill.objects.filter(categorie="Langage")
-    liste_skill_techno = Skill.objects.filter(categorie="Technologie")
-    liste_experience = Experience.objects.all().order_by('-id')
-    liste_diplome = Diplome.objects.all().order_by('-debut_annee')
-    liste_communautaire = Communautaire.objects.all().order_by('-id')
-    liste_item_portfolio = Item_portfolio.objects.all()
+    profile = Profile.objects.first()
+    skills = Skill.objects.all()
+    experiences = Experience.objects.all().order_by('-id')
+    educations = Education.objects.all().order_by('-start_year')
+    communities = Community.objects.all().order_by('-id')
+    items_portfolio = ItemPortfolio.objects.all()
     return render(request, 'website/index.html', {
-        'profil': profil,
-        'liste_skill_langage': liste_skill_langage,
-        'liste_skill_techno': liste_skill_techno,
-        'liste_experience': liste_experience,
-        'liste_diplome': liste_diplome,
-        'liste_communautaire': liste_communautaire,
-        'liste_item_portfolio': liste_item_portfolio,
+        'profile': profile,
+        'skills': skills,
+        'experiences': experiences,
+        'educations': educations,
+        'communities': communities,
+        'items_portfolio': items_portfolio,
     })
 
 
 def sending(request):
-    if (request.method == "POST"):
+    if request.method == "POST":
         name = request.POST['name']
         email = request.POST['email']
         subject = request.POST['subject']
         message = request.POST['message']
         # Envoi du mail
-        send_mail (
+        send_mail(
             subject,
             message,
             email,
@@ -43,5 +40,5 @@ def sending(request):
 
 
 class PortfolioDetailView(DetailView):
-    model = Item_portfolio
+    model = ItemPortfolio
     template_name = 'website/portfolio_details.html'
