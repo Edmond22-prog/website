@@ -20,7 +20,6 @@ environ.Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -31,7 +30,6 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -75,7 +73,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mywebsite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -85,7 +82,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -105,7 +101,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -118,7 +113,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -142,16 +136,16 @@ X_FRAME_OPTIONS = 'ALLOWALL'
 
 # PARAMETRAGE DU MAIL POUR LE LOCALHOST ET GMAIL
 
-EMAIL_HOST = 'localhost'    # 'smtp.gmail.com'
-EMAIL_PORT = 1025     # 587 et change au fil du temps
-EMAIL_HOST_USER = ''    # 'edghimakoll@gmail.com'
+EMAIL_HOST = 'localhost'  # 'smtp.gmail.com'
+EMAIL_PORT = 1025  # 587 et change au fil du temps
+EMAIL_HOST_USER = ''  # 'edghimakoll@gmail.com'
 EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = False 
+EMAIL_USE_TLS = False
 
 # Commande pour tracer le mail envoye par le localhost :
-    # python3 -m smtpd -n -c DebuggingServer localhost:1025
-
+# python3 -m smtpd -n -c DebuggingServer localhost:1025
 
 
 import django_heroku
+
 django_heroku.settings(locals())
