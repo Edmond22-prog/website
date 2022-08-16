@@ -6,7 +6,6 @@
 {% block content %}
     <!-- ======= Header ======= -->
     <header id="header" class="d-flex flex-column justify-content-center">
-
         <nav id="navbar" class="navbar nav-menu">
             <ul>
                 <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a>
@@ -20,6 +19,8 @@
                 {% endif %}
                 <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a>
                 </li>
+                <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Skills</span></a>
+                </li>
             </ul>
         </nav><!-- .nav-menu -->
 
@@ -27,7 +28,7 @@
 
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex flex-column justify-content-center"
-             style="background-size: cover ; background-image: url({{ profile.background_pic.url }}">
+             style="background-size: cover ; background-image: url({{ profile.background_pic.url }})">
         <div class="container" data-aos="zoom-in" data-aos-delay="100">
             <h1>{{ profile.surname }} {{ profile.name }}</h1>
             <p>I'm <span class="typed" data-typed-items="Leader, Developer, Freelancer, Otaku"></span></p>
@@ -50,13 +51,13 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 about-img-container">
                         <img src="{{ profile.profile_pic.url }}" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-8 pt-4 pt-lg-0 content">
                         <h3>Python Developer &amp; Junior Flutter Developer.</h3>
-                        <p class="fst-italic">
-                            This is some information about me...
+                        <p class="about-description">
+                            {{ profile.bio }}
                         </p>
                         <div class="row">
                             <div class="col-lg-6">
@@ -80,9 +81,6 @@
                                 </ul>
                             </div>
                         </div>
-                        <p>
-                            {{ profile.bio }}
-                        </p>
                     </div>
                 </div>
 
@@ -90,30 +88,81 @@
         </section><!-- End About Section -->
 
         <!-- ======= Skills Section ======= -->
-        <section id="skills" class="skills section-bg">
+        <section id="skills" class="section-bg">
             <div class="container" data-aos="fade-up">
-
                 <div class="section-title">
                     <h2>Skills</h2>
                 </div>
-
-                <div class="row skills-content">
-
-                    <div class="col-lg-6">
-                        <h4>Technologies</h4>
-                        <img src="{% static 'website/images/logo/django.svg' %}" alt="django" height="70" width="80">
-                        <img src="{% static 'website/images/logo/flutter.svg' %}" alt="flutter" height="70" width="80">
-                        <img src="{% static 'website/images/logo/git.svg' %}" alt="git" height="70" width="80">
-                        <img src="{% static 'website/images/logo/drf.svg' %}" alt="drf" height="70" width="80">
-                        <img src="{% static 'website/images/logo/mysql.svg' %}" alt="sql" height="70" width="80">
-                        <img src="{% static 'website/images/logo/android.svg' %}" alt="android" height="70" width="80">
+                <div class="skills-section flex flex-col">
+                    <div class="skills-row flex flex-col">
+                        <h4 class="skills-title">Languages</h4>
+                        <div class="skills-icon-container flex flex-row">
+                            <div class="skill-item flex flex-col">
+                                <div class="skill-box">
+                                    <img class="skill-img" src="{% static 'website/images/logo/python.svg' %}" alt="python">
+                                </div>
+                                <p class="skill-name">Python</p>
+                            </div>
+                            <div class="skill-item flex flex-col">
+                                <div class="skill-box">
+                                    <img class="skill-img" src="{% static 'website/images/logo/java.svg' %}" alt="java">
+                                </div>
+                                <p class="skill-name">Java</p>
+                            </div>
+                            <div class="skill-item flex flex-col">
+                                <div class="skill-box">
+                                    <img class="skill-img" src="{% static 'website/images/logo/kotlin.svg' %}" alt="kotlin">
+                                </div>
+                                <p class="skill-name">Kotlin</p>
+                            </div>
+                            <div class="skill-item flex flex-col">
+                                <div class="skill-box">
+                                    <img class="skill-img" src="{% static 'website/images/logo/dart.svg' %}" alt="dart">
+                                </div>
+                                <p class="skill-name">Dart</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-6">
-                        <h4>Languages</h4>
-                        <img src="{% static 'website/images/logo/python.svg' %}" alt="python" height="70" width="80">
-                        <img src="{% static 'website/images/logo/java.svg' %}" alt="java" height="70" width="80">
-                        <img src="{% static 'website/images/logo/kotlin.svg' %}" alt="kotlin" height="70" width="80">
-                        <img src="{% static 'website/images/logo/dart.svg' %}" alt="dart" height="70" width="80">
+                    <div class="skills-row flex flex-col">
+                        <h4 class="skills-title">Technologies</h4>
+                        <div class="skills-icon-container  flex flex-row">
+                            <div class="skill-item flex flex-col">
+                                <div class="skill-box">
+                                    <img class="skill-img" src="{% static 'website/images/logo/django.svg' %}" alt="django">
+                                </div>
+                                <p class="skill-name">Django</p>
+                            </div>
+                            <div class="skill-item flex flex-col">
+                                <div class="skill-box">
+                                    <img class="skill-img" src="{% static 'website/images/logo/flutter.svg' %}" alt="flutter">
+                                </div>
+                                <p class="skill-name">Flutter</p>
+                            </div>
+                            <div class="skill-item flex flex-col">
+                                <div class="skill-box">
+                                    <img class="skill-img" src="{% static 'website/images/logo/git.svg' %}" alt="git">
+                                </div>
+                                <p class="skill-name">Git</p>
+                            </div>
+                            <div class="skill-item flex flex-col">
+                                <div class="skill-box">
+                                    <img class="skill-img" src="{% static 'website/images/logo/mysql.svg' %}" alt="My SQL">
+                                </div>
+                                <p class="skill-name">My SQL</p>
+                            </div>
+                            <div class="skill-item flex flex-col">
+                                <div class="skill-box">
+                                    <img class="skill-img" src="{% static 'website/images/logo/android.svg' %}" alt="android">
+                                </div>
+                                <p class="skill-name">Android</p>
+                            </div>
+                            <div class="skill-item flex flex-col">
+                                <div class="skill-box">
+                                    <img class="skill-img" src="{% static 'website/images/logo/drf.svg' %}" alt="django rest framework">
+                                </div>
+                                <p class="skill-name">Django Rest Framework</p>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
